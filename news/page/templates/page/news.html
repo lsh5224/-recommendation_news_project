@@ -1,0 +1,15 @@
+{% load custom_filters %}
+
+<div>
+    {% for topic in topics %}
+        <h2>{{ topic }}</h2>
+        <ul>
+            {% for news in topic_news|get_item:topic %}
+                <li>
+                    <strong>Title:</strong> {{ news.title }} <br>
+                    <strong>Date:</strong> {{ news.date_upload }} <br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
